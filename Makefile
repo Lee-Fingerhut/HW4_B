@@ -1,6 +1,6 @@
 #!make -f
 
-CXX=clang++
+CXX=clang++-9
 CXXFLAGS=-std=c++2a -Wno-potentially-evaluated-expression
 
 HEADERS := Board.hpp Soldier.hpp $(wildcard *.h*)

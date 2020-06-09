@@ -11,6 +11,8 @@
 #include "Paramedic.hpp"
 #include "ParamedicCommander.hpp"
 
+using namespace WarGame;
+
 WarGame::Board fillBoard(){
     WarGame::Board p(6,6);
     p[{0,0}]= new FootSoldier(1);
@@ -52,8 +54,7 @@ TEST_CASE("Check Adding player to board"){
             CHECK_FALSE(q.has_soldiers(2));
     WarGame::Board p = fillBoard();
             CHECK(p.has_soldiers(1));
-    CHECK(p.has_soldiers(2));
-    p.print();
+            CHECK(p.has_soldiers(2));
             CHECK(typeid(*p[{0,0}]) == typeid(FootSoldier));
             CHECK(typeid(*p[{3,3}]) == typeid(FootSoldier));
             CHECK(typeid(*p[{5,0}]) == typeid(FootCommander));
@@ -214,4 +215,3 @@ TEST_CASE("Extra"){
             CHECK(!b.has_soldiers(1));
 
 }
-

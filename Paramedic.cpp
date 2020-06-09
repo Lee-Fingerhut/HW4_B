@@ -15,20 +15,21 @@ void Paramedic::activity(std::vector<std::vector<Soldier*>> &board, std::pair<in
     Soldier* s = nullptr;
     int loc_x = loc.first;
     int loc_y = loc.second;
-    unsigned long startX = loc_x - 1 < 0 ? 0 : loc_x-1;
-    unsigned long stopX = loc_x + 1 >= board.size() ? board.size()-1 : loc_x + 1;
-    unsigned long startY = loc_y - 1 < 0 ? 0 : loc_y-1;
-    unsigned long stopY = loc_y + 1 >= board[0].size() ? board[0].size()-1 : loc_y + 1;
-    for(unsigned long i=startX; i<=stopX; i++){
-        for(unsigned long j=startY; j<=stopY; j++){
-            if(loc_x == i && loc_y == j)
+    int startX = loc_x - 1 < 0 ? 0 : loc_x-1;
+    int stopX = loc_x + 1 >= board.size() ? board.size()-1 : loc_x + 1;
+    int startY = loc_y - 1 < 0 ? 0 : loc_y-1;
+    int stopY = loc_y + 1 >= board[0].size() ? board[0].size()-1 : loc_y + 1;
+    //cout << "startX: " << startX << ", stopX: " << stopX << std::endl;
+   // cout << "starty: " << startY << ", stopy: " << stopY << std::endl;
+    
+    for(int i=startX; i<=stopX; i++){
+        for(int j=startY; j<=stopY; j++){
+            if(loc_x == i && loc_y == j){
                 continue;
+            }
             s = board[i][j];
-            if(s != nullptr){
+            if(s != nullptr && s->getNum_Of_Player() == this->getNum_Of_Player()){
                 s->setHealth_points(s->getInitial_Health_Points());
-                if (s->getHealth_points() <= 0) {
-                    delete s;
-                }
             }
         }
     }
