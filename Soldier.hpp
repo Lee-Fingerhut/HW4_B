@@ -9,6 +9,8 @@
 #include <iostream>
 #include <vector>
 #include <stdio.h>
+#include <typeinfo>
+#include <iomanip>
 //#include <sys/param.h>
 
 using namespace std;

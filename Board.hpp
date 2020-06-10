@@ -2,7 +2,7 @@
 #include <vector>
 #include <stdexcept>
 #include "Soldier.hpp"
-
+#include <typeinfo> 
 
 namespace WarGame {
 /*class ex: public exception {

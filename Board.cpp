@@ -11,6 +11,7 @@
 #include <cmath>
 #include <iostream>
 #include <exception>
+#include <typeinfo>
 
 using namespace std;
 
@@ -41,20 +42,22 @@ class ex_4: public exception {
 } myex_4;
 
 Soldier*& Board::operator[](std::pair<int, int> location) {
-    if(board[location.first][location.second] !=  nullptr){
+    /*if(board[location.first][location.second] !=  nullptr){
         throw myex_4;
-    }
+    }*/
     return board[location.first][location.second];
 }
 Soldier* Board::operator[](std::pair<int,int> location) const {
-    if(board[location.first][location.second] !=  nullptr){
+   /* if(board[location.first][location.second] !=  nullptr){
         throw myex_4;
-    }
+    }*/
     return board[location.first][location.second];
 }
 
 void Board::move(uint player_number, std::pair<int,int> source, MoveDIR direction) {
-
+    if(source.first < 0 || source.first >= board.size()|| source.second<0 || source.second >=board[source.first].size()) {
+          throw myex_2;
+      }
     Soldier *ps = board[source.first][source.second];
     int i = source.first;
     int j = source.second;
