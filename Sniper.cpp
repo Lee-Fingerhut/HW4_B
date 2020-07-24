@@ -8,7 +8,7 @@
 
 #include "Sniper.hpp"
 
-
+//Shoots the strongest soldier of the enemy - the one who has the most health points. can move one step
 void Sniper::activity(std::vector<std::vector<Soldier*>> &board, std::pair<int,int> loc){
     Soldier* s = nullptr;
     Soldier* s_max = nullptr;
@@ -39,4 +39,3 @@ void Sniper::activity(std::vector<std::vector<Soldier*>> &board, std::pair<int,i
     }
     
 }
-

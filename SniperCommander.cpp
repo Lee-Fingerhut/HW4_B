@@ -7,7 +7,7 @@
 //
 #include "SniperCommander.hpp"
 
-
+//Like a sniper, but when he moves, not only does he shoot but all the sniper of that player shoots.
 void SniperCommander::activity(std::vector<std::vector<Soldier*>> &board, std::pair<int,int> loc){
     Sniper* ps = nullptr;
     std::pair<int,int> ps_loc;
@@ -29,4 +29,3 @@ void SniperCommander::activity(std::vector<std::vector<Soldier*>> &board, std::p
         }
     }
 }
-

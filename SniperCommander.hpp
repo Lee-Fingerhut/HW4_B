@@ -1,3 +1,4 @@
+
 //
 //  SniperCommander.hpp
 //  wargame-a
@@ -13,6 +14,7 @@
 
 using namespace std;
 
+//Like a sniper, but when he moves, not only does he shoot but all the sniper of that player shoots.
 class SniperCommander :  public Sniper {
 public:
     SniperCommander(int player) : Sniper(player){
@@ -22,6 +24,5 @@ public:
         type = SoldierID::SniperCommander;
 
     }
-      void activity(std::vector<std::vector<Soldier*>> &board, std::pair<int,int> loc);
+    void activity(std::vector<std::vector<Soldier*>> &board, std::pair<int,int> loc);
 };
-

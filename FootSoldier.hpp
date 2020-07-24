@@ -13,7 +13,7 @@
 #include "Soldier.hpp"
 
 using namespace std;
-
+//shoots on the nearest soldier, and can move one step
 class FootSoldier : public Soldier {
 public:
     FootSoldier(int player) : Soldier(100, 10, player){
@@ -22,4 +22,3 @@ public:
     }
     void activity(std::vector<std::vector<Soldier*>> &board, std::pair<int,int> loc);
 };
-

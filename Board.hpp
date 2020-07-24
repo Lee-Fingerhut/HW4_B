@@ -2,7 +2,7 @@
 #include <vector>
 #include <stdexcept>
 #include "Soldier.hpp"
-#include <typeinfo> 
+
 
 namespace WarGame {
 /*class ex: public exception {
@@ -47,11 +47,10 @@ public:
             for(int j=0; j<board[i].size(); j++){
                 s = board[i][j];
                 if (s != nullptr) {
-                    cout << "player " << s->getNum_Of_Player() << " at (" << i << "," << j << ")" << " has " << s->getHealth_points() << " health points " <<std::endl;
+                    cout << "player " << s->getNum_Of_Player() << " at (" << i << "," << j << ")" << " has " << s->getHealth_points() << " health points" << std::endl;
                 }
             }
         }
-            cout << std::endl;
     }
 };
 

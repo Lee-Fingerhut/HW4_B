@@ -8,9 +8,12 @@
 
 #include "Paramedic.hpp"
 
+//Can go one slot in each direction. 
+//Does not shoot at all, but only heals all the soldiers of the same player who are in the box next to him 
+//(returns the number of their health points to the starting number)
+
 // I assumed that the Paramedic doesn't heals himself
 // but heals other paramdics next to him;
-
 void Paramedic::activity(std::vector<std::vector<Soldier*>> &board, std::pair<int,int> loc){
     Soldier* s = nullptr;
     int loc_x = loc.first;
@@ -34,4 +37,3 @@ void Paramedic::activity(std::vector<std::vector<Soldier*>> &board, std::pair<in
         }
     }
 }
-

@@ -1,21 +1,11 @@
-//
-//  FootCommander.hpp
-//  wargame-a
-//
-//  Created by Lee Fingerhut on 22/05/2020.
-//  Copyright © 2020 Lee Fingerhut. All rights reserved.
-//
-
 #pragma once
 #include <stdio.h>
 #include <iostream>
 #include <vector>
 #include "FootSoldier.hpp"
-
-
 using namespace std;
 
-
+//like footsoldier, but when he movs all the footsoldiers sout
 class FootCommander : public FootSoldier {
 public:
     FootCommander(int player) : FootSoldier(player){

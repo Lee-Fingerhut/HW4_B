@@ -1,20 +1,16 @@
-//
-//  FootCommander.cpp
-//  wargame-a
-//
-//  Created by Lee Fingerhut on 22/05/2020.
-//  Copyright © 2020 Lee Fingerhut. All rights reserved.
-//
-
 #include "FootCommander.hpp"
 
+//like footsoldier, but when he movs all the footsoldiers sout
 void FootCommander::activity(std::vector<std::vector<Soldier*>> &board, std::pair<int,int> loc){
     FootSoldier* s = nullptr;
     std::pair<int,int> ps_loc;
+    //only shout like footcomandar
     s = dynamic_cast<FootSoldier*>(board[loc.first][loc.second]);
+    //myself->FootCommander
     s->FootSoldier::activity(board, loc);
     for(int i=0; i<board.size(); i++) {
         for(int j=0; j<board[i].size(); j++) {
+            //the loc of the FootCommander
             if(i == loc.first && j == loc.second){
                 continue;
             }
@@ -29,4 +25,3 @@ void FootCommander::activity(std::vector<std::vector<Soldier*>> &board, std::pai
         }
     }
 }
-

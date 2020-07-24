@@ -1,3 +1,4 @@
+
 //
 //  Sniper.hpp
 //  wargame-a
@@ -13,6 +14,7 @@
 
 using namespace std;
 
+//Shoots the strongest soldier of the enemy - the one who has the most health points. can move one step
 class Sniper : public Soldier {
 public:
     Sniper(int player) : Soldier(100, 50, player){
@@ -21,4 +23,3 @@ public:
     }
     void activity(std::vector<std::vector<Soldier*>> &board, std::pair<int,int> loc);
 };
-
